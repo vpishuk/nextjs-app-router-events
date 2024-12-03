@@ -2,12 +2,10 @@
     "author": "Victor Pishuk <victor.pishuk@gmail.com>",
     "type": "module",
     "bugs": {
-        "url": "https://github.com/vpishuk/react-imagekit-hooks/issues"
-    },
-    "dependencies": {
-        "imagekit-javascript": "^3.0.2"
+        "url": "https://github.com/vpishuk/nextjs-app-router-events/issues"
     },
     "peerDependencies": {
+        "next": "^15.0.3",
         "react": "^18.2.0"
     },
     "publishConfig": {
@@ -19,23 +17,24 @@
         "@types/react": "^18.2.21",
         "husky": "^9.1.1",
         "lint-staged": "^15.1.0",
+        "next": "^15.0.3",
         "prettier": "^3.0.3",
         "react": "^18.2.0",
         "typescript": "^5.2.2"
     },
-    "homepage": "https://github.com/vpishuk/react-imagekit-hooks",
+    "homepage": "https://github.com/vpishuk/nextjs-app-router-events",
     "keywords": [
         "imagekit",
         "react",
         "hooks"
     ],
-    "license": "UNLICENSED",
+    "license": "MIT",
     "main": "./dist/src/index.js",
     "types": "./dist/src/index.d.ts",
-    "name": "react-imagekit-hooks",
+    "name": "nextjs-app-router-events",
     "repository": {
         "type": "git",
-        "url": "https://github.com/vpishuk/react-imagekit-hooks.git"
+        "url": "https://github.com/vpishuk/nextjs-app-router-events.git"
     },
     "files": [
         "./dist/src/",
@@ -52,5 +51,5 @@
         "lint:staged": "lint-staged",
         "prepare": "husky"
     },
-    "version": "0.2.1"
+    "version": "0.0.1"
 }
