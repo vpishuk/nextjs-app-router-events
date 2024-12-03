@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/vpishuk/nextjs-app-router-events/compare/v1.0.1...v1.0.2) (2024-12-03)
+
+
+### Miscellaneous Chores
+
+* release 1.0.2 ([#5](https://github.com/vpishuk/nextjs-app-router-events/issues/5)) ([ea18eb0](https://github.com/vpishuk/nextjs-app-router-events/commit/ea18eb0d650809593b764275c6a3ebaf70596ac8))
+
 ## [1.0.1](https://github.com/vpishuk/nextjs-app-router-events/compare/v1.0.0...v1.0.1) (2024-12-03)
 
 
