@@ -1,2 +1,4 @@
-export * from "./AppRouterEventsContextProvider";
-export * from "./useAppRouterEvents";
+"use client";
+
+export { AppRouterEventsContextProvider } from "./AppRouterEventsContextProvider";
+export { useAppRouterEvents } from "./useAppRouterEvents";

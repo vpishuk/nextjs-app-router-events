@@ -1,3 +1,5 @@
+"use client";
+
 import React, { PropsWithChildren, useCallback, useMemo, useState } from "react";
 import { AppRouterEvent, AppRouterEventData, AppRouterEventsContext } from "./AppRouterEventsContext";
 import { NavigateOptions } from "next/dist/shared/lib/app-router-context.shared-runtime";
