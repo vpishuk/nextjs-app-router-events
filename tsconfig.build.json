@@ -10,6 +10,7 @@
         "outDir": "./dist/",
         "rootDir": "./",
         "skipLibCheck": true,
+        "sourceMap": true,
         "strict": true,
         "target": "ES2021"
     },
