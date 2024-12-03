@@ -29,5 +29,6 @@ jobs:
               id: release
               with:
                 release-type: node
+                token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
             - uses: ./.github/actions/publish
               if: ${{ steps.release.outputs.release_created }}
