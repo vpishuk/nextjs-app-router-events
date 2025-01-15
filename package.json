@@ -5,21 +5,21 @@
         "url": "https://github.com/vpishuk/nextjs-app-router-events/issues"
     },
     "peerDependencies": {
-        "next": "^15.0.3",
-        "react": "^18.2.0"
+        "next": "^15.0.0",
+        "react": "^18.0.0 || ^19.0.0"
     },
     "publishConfig": {
         "access": "public"
     },
     "description": "This module offers react hooks to work with ImageKit platform",
     "devDependencies": {
-        "@laverve/eslint-utils": "^5.1.1",
-        "@types/react": "^18.2.21",
+        "@laverve/eslint-utils": "^5.1.19",
+        "@types/react": "^19.0.7",
         "husky": "^9.1.1",
         "lint-staged": "^15.1.0",
         "next": "^15.0.3",
         "prettier": "^3.0.3",
-        "react": "^18.2.0",
+        "react": "^19.0.0",
         "typescript": "^5.2.2"
     },
     "homepage": "https://github.com/vpishuk/nextjs-app-router-events",
