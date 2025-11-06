@@ -5,28 +5,37 @@
         "url": "https://github.com/vpishuk/nextjs-app-router-events/issues"
     },
     "peerDependencies": {
-        "next": "^15.0.0",
-        "react": "^18.0.0 || ^19.0.0"
+        "next": "^15.x.x || ^16.x.x",
+        "react": "^18.x.X || ^19.x.x"
     },
     "publishConfig": {
         "access": "public"
     },
     "description": "This module offers react hooks to work with ImageKit platform",
     "devDependencies": {
-        "@laverve/eslint-utils": "^5.1.19",
-        "@types/react": "^19.0.7",
-        "husky": "^9.1.1",
-        "lint-staged": "^16.0.0",
-        "next": "^15.0.3",
-        "prettier": "^3.0.3",
-        "react": "^19.0.0",
-        "typescript": "^5.2.2"
+        "@eslint-community/eslint-plugin-eslint-comments": "^4.5.0",
+        "@types/react": "^19.2.2",
+        "eslint": "^9.39.1",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-import": "^2.32.0",
+        "eslint-plugin-jest": "^29.0.1",
+        "eslint-plugin-jsonc": "^2.21.0",
+        "eslint-plugin-prettier": "^5.5.4",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^7.0.1",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.6",
+        "next": "^16.0.1",
+        "prettier": "^3.6.2",
+        "react": "^19.2.0",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.46.3"
     },
     "homepage": "https://github.com/vpishuk/nextjs-app-router-events",
     "keywords": [
-        "imagekit",
+        "nextjs",
         "react",
-        "hooks"
+        "router"
     ],
     "license": "MIT",
     "main": "./dist/src/index.js",
