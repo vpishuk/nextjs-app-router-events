@@ -1,10 +1,10 @@
 "use client";
 
 import React, { PropsWithChildren, useCallback, useMemo, useState } from "react";
-import { AppRouterEvent, AppRouterEventData, AppRouterEventsContext } from "./AppRouterEventsContext";
 import { NavigateOptions } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useRouter } from "next/navigation";
 import { Route } from "next";
+import { AppRouterEvent, AppRouterEventData, AppRouterEventsContext } from "./AppRouterEventsContext";
 
 export const AppRouterEventsContextProvider: React.FC<PropsWithChildren> = ({ children }) => {
     const router = useRouter();
@@ -13,25 +13,28 @@ export const AppRouterEventsContextProvider: React.FC<PropsWithChildren> = ({ ch
         Record<string, Array<((data?: AppRouterEventData) => boolean | Promise<boolean>) | undefined>>
     >({});
 
-    const executeListeners = useCallback(async (name: AppRouterEvent, data?: AppRouterEventData) => {
-        const eventListeners = listeners[name] ?? [];
-        if (eventListeners.length <= 0) {
-            return true;
-        }
+    const executeListeners = useCallback(
+        async (name: AppRouterEvent, data?: AppRouterEventData) => {
+            const eventListeners = listeners[name] ?? [];
+            if (eventListeners.length <= 0) {
+                return true;
+            }
 
-        const shallProceed = true;
+            const shallProceed = true;
 
-        for (const handler of eventListeners) {
-            if (handler) {
-                const result = await handler(data);
-                if (result === false) {
-                    return result;
+            for (const handler of eventListeners) {
+                if (handler) {
+                    const result = await handler(data);
+                    if (result === false) {
+                        return result;
+                    }
                 }
             }
-        }
 
-        return shallProceed;
-    }, []);
+            return shallProceed;
+        },
+        [listeners]
+    );
 
     const subscribe = useCallback(
         (name: AppRouterEvent, handler: (data?: AppRouterEventData) => boolean | Promise<boolean>) => {
@@ -57,7 +60,7 @@ export const AppRouterEventsContextProvider: React.FC<PropsWithChildren> = ({ ch
                 });
             };
         },
-        []
+        [listeners]
     );
 
     const back = useCallback(async () => {
@@ -65,21 +68,21 @@ export const AppRouterEventsContextProvider: React.FC<PropsWithChildren> = ({ ch
         if (shallProceed) {
             router.back();
         }
-    }, [router.back, executeListeners]);
+    }, [router, executeListeners]);
 
     const forward = useCallback(async () => {
         const shallProceed = await executeListeners("beforeNavigate");
         if (shallProceed) {
             router.forward();
         }
-    }, [router.forward, executeListeners]);
+    }, [router, executeListeners]);
 
     const refresh = useCallback(async () => {
         const shallProceed = await executeListeners("beforeNavigate");
         if (shallProceed) {
             router.refresh();
         }
-    }, [router.refresh, executeListeners]);
+    }, [router, executeListeners]);
 
     const replace = useCallback(
         async (href: string, options?: NavigateOptions) => {
@@ -88,7 +91,7 @@ export const AppRouterEventsContextProvider: React.FC<PropsWithChildren> = ({ ch
                 router.replace(href as Route, options);
             }
         },
-        [router.replace, executeListeners]
+        [router, executeListeners]
     );
 
     const prefetch = useCallback(
@@ -98,7 +101,7 @@ export const AppRouterEventsContextProvider: React.FC<PropsWithChildren> = ({ ch
                 router.prefetch(href as Route);
             }
         },
-        [router.prefetch, executeListeners]
+        [router, executeListeners]
     );
 
     const push = useCallback(
@@ -108,7 +111,7 @@ export const AppRouterEventsContextProvider: React.FC<PropsWithChildren> = ({ ch
                 router.push(href as Route, options);
             }
         },
-        [router.push, executeListeners]
+        [router, executeListeners]
     );
 
     const value = useMemo(
